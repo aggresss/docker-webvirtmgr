@@ -1,6 +1,7 @@
 FROM ubuntu:14.04
 MAINTAINER Jagger Yu <aggresss@gmail.com>
 
+ENV DEBIAN_FRONTEND noninteractive
 
 # Modify apt-get to aliyun mirror
 RUN sed -i 's/archive.ubuntu/mirrors.aliyun/g' /etc/apt/sources.list
