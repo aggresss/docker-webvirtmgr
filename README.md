@@ -35,7 +35,7 @@ Then, you can mount this folder into your container.
 ``` 
 $ docker run -d -p 8080:8080 -p 6080:6080 -v /path/to/our/volume:/var/local/webvirtmgr aggresss/docker-webvirtmgr
 ```
-
+(deprecated)
 Finally if you want the docker-webvirtmgr manage local virtual machine, please mount /var/run/libvirt/libvirt-sock to the container:
 
 ```
@@ -48,3 +48,4 @@ docker run -d \
 -v /var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock \
 webvirtmgr
 ```
+and run this at host (deprecated) : chmod 777 /var/run/libvirt/libvirt-sork
