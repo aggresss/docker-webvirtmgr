@@ -16,7 +16,7 @@ $ docker pull aggresss/docker-webvirtmgr
 ### Usage
 
 ```
-$ docker run -d -p 8080:8080 aggresss/docker-webvirtmgr
+$ docker run -d -p 8080:8080 -p 6080:6080 aggresss/docker-webvirtmgr
 ```
 
 It may takes 2 or 3 seconds for setting up Django database.
@@ -33,6 +33,6 @@ chown 33 /path/to/our/volume:/var/local/webvirtmgr
 Then, you can mount this folder into your container.
 
 ``` 
-$ docker run -d -p 8080:8080 -v /path/to/our/volume:/var/local/webvirtmgr aggresss/docker-webvirtmgr
+$ docker run -d -p 8080:8080 -p 6080:6080 -v /path/to/our/volume:/var/local/webvirtmgr aggresss/docker-webvirtmgr
 ```
 
