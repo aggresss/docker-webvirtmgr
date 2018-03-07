@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER Jim Yeh <lemonlatte@gmail.com>
+MAINTAINER Jagger Yu <aggresss@gmail.com>
 
 
 # Modify apt-get to aliyun mirror
@@ -26,7 +26,7 @@ RUN echo "[global]" > /root/.pip/pip.conf && \
     echo "trusted-host=mirrors.aliyun.com" >> /root/.pip/pip.conf
 
 
-RUN apt-get -y install git python-pip python-libvirt python-libxml2 supervisor nginx 
+RUN apt-get -y install git python-pip python-libvirt python-libxml2 supervisor novnc nginx 
 
 RUN git clone https://github.com/retspen/webvirtmgr
 WORKDIR /webvirtmgr
@@ -50,5 +50,5 @@ RUN apt-get -ys clean
 WORKDIR /
 VOLUME /var/local/webvirtmgr
 
-EXPOSE 8080
+EXPOSE 8080/tcp 6080/tcp
 CMD ["supervisord", "-n"] 
